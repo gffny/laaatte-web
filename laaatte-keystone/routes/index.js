@@ -43,8 +43,9 @@ exports = module.exports = function (app) {
 
 	// API
 	app.all('/api*', keystone.middleware.api);
+	app.all('/api/place/list', routes.api.placeList);
 	app.all('/api/place/:id', routes.api.place);
-	app.all('/api/place/near/:latitude/:longitude', routes.api.placenear);
+	app.all('/api/place/near/:latitude/:longitude', routes.api.placeNear);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
